@@ -1,0 +1,125 @@
+/* basic styles */
+.textArticle {
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.articleMaster {
+  margin: auto;
+  justify-content: center;
+}
+.skeleton {
+  background: #ddd;
+  overflow: hidden;
+  border-radius: 4px;
+  max-width: 400px;
+}
+.skeleton.text {
+  width: 100%;
+  height: 300px;
+  border-radius: 30px;
+  width: 300px;
+}
+
+.skeleton.title {
+  height: 40px;
+  border-radius: 30px;
+  width: 100%;
+}
+.skeleton.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+
+.skeleton.avatar::after {
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.skeleton.thumbnail {
+  width: 100px;
+  height: 100px;
+  max-width: 400px;
+}
+
+.skeleton-wrapper-text {
+  padding: 10px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* skeleton profile */
+
+/* themes */
+.skeleton-wrapper.light {
+  background: #f2f2f2;
+  border-radius: 30px;
+  padding: 1%;
+  max-width: 25px;
+  display: inline-block;
+}
+.skeleton-wrapper-text.light {
+  background: #f2f2f2;
+  border-radius: 30px;
+  margin: 25px;
+}
+.skeleton-wrapper-title.light {
+  display: flex;
+  background: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+.skeleton-wrapper.dark {
+  background: #444;
+}
+.skeleton-wrapper.dark .skeleton {
+  background: #777;
+}
+
+/* animation effects */
+.shimmer-wrapper {
+  position: absolute;
+  /* parent must be relative position & overflow hidden */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 2.5s infinite;
+}
+.shimmer {
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.2);
+}
+.dark .shimmer {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-150%);
+  }
+  50% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
